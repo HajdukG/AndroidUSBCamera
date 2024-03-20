@@ -33,10 +33,6 @@ android {
     }
 }
 
-tasks.withType(JavaCompile) {
-	compileTask -> compileTask.dependsOn ndkBuild
-}
-
 String getNdkBuildPath() {
 	def ndkBuildingDir = System.getenv("NDK_HOME")
 	if (ndkBuildingDir==null || ndkBuildingDir.isEmpty()) {
@@ -52,20 +48,6 @@ String getNdkBuildPath() {
 	}
 	return ndkBuildPath
 }
-
-task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
-	println('executing ndkBuild')
-	def ndkBuildPath = getNdkBuildPath();
-	commandLine ndkBuildPath, '-j8', '-C', file('src/main').absolutePath
-}
-
-task ndkClean(type: Exec, description: 'clean JNI libraries') {
-	println('executing ndkBuild clean')
-	def ndkBuildPath = getNdkBuildPath();
-	commandLine ndkBuildPath, 'clean', '-C', file('src/main').absolutePath
-}
-
-clean.dependsOn 'ndkClean'
 
 dependencies {
     implementation fileTree(dir: new File(buildDir, 'libs'), include: '*.jar')
