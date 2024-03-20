@@ -53,13 +53,13 @@ object Utils  {
     }
 
     fun getGpsLocation(context: Context?): Location? {
-        context?.let { ctx->
+/*        context?.let { ctx->
             val locationManager = ctx.getSystemService(Context.LOCATION_SERVICE) as LocationManager
             val locPermission = ContextCompat.checkSelfPermission(ctx, Manifest.permission.ACCESS_FINE_LOCATION)
             if (locPermission == PackageManager.PERMISSION_GRANTED) {
                 return locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER)
             }
-        }
+        }*/
         return null
     }
 

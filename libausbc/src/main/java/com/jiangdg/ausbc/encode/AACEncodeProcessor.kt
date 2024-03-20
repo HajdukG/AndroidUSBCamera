@@ -283,7 +283,7 @@ class AACEncodeProcessor(strategy: IAudioStrategy? = null) : AbstractProcessor(f
     private fun initAudioRecord() {
         if (mAudioRecordState.get()) return
         mAudioThreadPool.submit {
-            mAudioRecord.initAudioRecord()
+            //mAudioRecord.initAudioRecord()
             mAudioRecord.startRecording()
             mAudioRecordState.set(true)
             mCountDownLatch?.countDown()
