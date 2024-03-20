@@ -4,7 +4,6 @@ import org.apache.tools.ant.taskdefs.condition.Os
 
 android {
 	compileSdkVersion rootProject.ext.versionCompiler
-	buildToolsVersion rootProject.ext.versionBuildTool
 
 	compileOptions {
 		sourceCompatibility rootProject.ext.javaSourceCompatibility
@@ -31,6 +30,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+	namespace 'com.jiangdg.uvccamera'
 }
 
 String getNdkBuildPath() {
