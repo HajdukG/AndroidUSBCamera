@@ -15,7 +15,7 @@ object LameMp3 {
      * @param inSampleRate pcm format audio sample rate
      * @param outChannel number of audio channels in pcm format
      * @param outSampleRate mp3 format audio sample rate
-     * @param outBitRate mp3 format audio bit rate
+     * @param outBitRate mp3 format audio bit rate  s
      * @param quality mp3 format audio quality, 0~9, slowest and worst~fastest and best
      */
     external fun lameInit(
